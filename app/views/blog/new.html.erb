@@ -1,0 +1,12 @@
+<h1>New Blog Posts Here</h1>
+
+
+<div class="booyah-box col-10 offset-1">
+  <%= simple_form_for @blog do |f| %>
+    <%= f.input :title %>
+    <br />
+    <%= f.input :body %>
+    <br />
+    <%= f.submit "Add Blog Post", class: 'btn btn-primary'%>
+  <% end %>
+</div>
