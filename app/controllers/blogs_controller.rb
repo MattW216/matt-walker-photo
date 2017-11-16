@@ -1,16 +1,19 @@
-class BlogController < ApplicationController
+class BlogsController < ApplicationController
   def index
-  end
-
-  def create
-    @blog = Blog.create(blog_params)
-  end
-
-  def show
   end
 
   def new
     @blog = Blog.new
+  end
+
+  def create
+    @blog = Blog.create(blog_params)
+    redirect_to blog_path(@blog)
+  end
+
+  def show
+    @blog = Blog.find(params[:id])
+    @comment = Comment.new
   end
 
   private

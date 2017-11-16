@@ -1,0 +1,24 @@
+<h1><%= @blog.title %></h1>
+<br />
+<br />
+<p><%= @blog.body %></p>
+<br />
+<br />
+<br />
+<br />
+<div class="booyah-box col-10 offset-1">
+  <h3>Add a Comment</h3>
+  <%= simple_form_for @comment, url: blog_comments_path(@blog) do |f| %>
+    <%= f.input :message %>
+    <br />
+    <%= f.submit "Add Comment", class: 'btn btn-primary'%>
+  <% end %>
+</div>
+
+<div class="clear"></div>
+
+<div class="row">
+  <% @blog.comments.each do |comment| %>
+    <%= comment.message %>
+  <% end %>
+</div>
